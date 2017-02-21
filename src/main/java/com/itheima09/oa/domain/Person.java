@@ -2,10 +2,15 @@ package com.itheima09.oa.domain;
 
 import java.io.Serializable;
 
-public class Person implements Serializable {
+import org.hibernate.impl.SessionFactoryImpl;
+
+public class Person implements Serializable{
 	private Long pid;
 	private String name;
 	private String description;
+	
+	
+	
 	public Long getPid() {
 		return pid;
 	}

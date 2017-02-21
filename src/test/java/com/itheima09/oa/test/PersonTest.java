@@ -8,18 +8,17 @@ import com.itheima09.oa.struts2.action.PersonAction;
 
 public class PersonTest extends SpringUtils{
 	@Test
-	public void testPersionService()
-	{
-		PersonService personService = (PersonService) context.getBean("personService");
+	public void testPersonService(){
+		PersonService personService = (PersonService)context.getBean("personService");
 		Person person = new Person();
-		person.setName("王二");
+		person.setName("王二麻子");
+		person.setDescription("纯爷们");
 		personService.saveEntry(person);
 	}
 	
 	@Test
-	public void testPersionAction()
-	{
+	public void testPersonAction(){
 		PersonAction personAction = (PersonAction)context.getBean("personAction");
-//		personAction.showDate();
+		System.out.println(personAction);
 	}
 }

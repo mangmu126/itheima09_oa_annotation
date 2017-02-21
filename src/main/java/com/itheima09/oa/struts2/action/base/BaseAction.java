@@ -1,24 +1,21 @@
 package com.itheima09.oa.struts2.action.base;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
 import java.util.Collection;
 
-import org.apache.commons.beanutils.BeanUtils;
-import org.codehaus.jackson.map.util.BeanUtil;
+import org.springframework.beans.BeanUtils;
 
 import com.itheima09.oa.service.base.BaseService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
-public abstract class BaseAction<T> implements ModelDriven<T> {
-
+public abstract class BaseAction<T> implements ModelDriven<T>{
 
 	//public abstract BaseService<T> getBaseService();
-
+	
 	private Class modelDriverClass;
 	private Long id;
-
+	
 	//跳转到列表页面的常量
 	public static final String LISTACTION = "listAction";
 	//跳转到更新页面的常量
@@ -27,18 +24,18 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 	public static final String ADDUI = "addUI";
 	//action跳转到action
 	public static final String ACTION2ACTION = "action2action";
-
+	
 	public String listAction = LISTACTION;
 	public String addUI = ADDUI;
 	public String updateUI = UPDATEUI;
 	public String action2action = ACTION2ACTION;
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
 
 	private T t;
-
+	
 	public BaseAction() {
 		//获取 BaseAction<T>
 		ParameterizedType type = (ParameterizedType)this.getClass().getGenericSuperclass();
@@ -49,15 +46,15 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		} 
 	}
-
+	
 	@Override
 	public T getModel() {
 		// TODO Auto-generated method stub
 		return this.t;
 	}
-
+	
 	/**
 	 * 查询
 	 */
@@ -67,14 +64,14 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 		ActionContext.getContext().put("dataList", null);
 		return "list";
 	}
-
+	
 	/**
 	 * 跳转到增加的页面
 	 */
 	public String addUI(){
 		return "addUI";
 	}
-
+	
 	/**
 	 * 增加
 	 */
@@ -85,7 +82,7 @@ public abstract class BaseAction<T> implements ModelDriven<T> {
 		//this.getBaseService().saveEntry(t);
 		return "action2action";
 	}
-
+	
 	/**
 	 * 跳转到修改的页面
 	 */

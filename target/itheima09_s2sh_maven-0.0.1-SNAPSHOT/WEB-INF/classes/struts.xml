@@ -8,4 +8,5 @@
 	<constant name="struts.devMode" value="true"/>
 	<include file="struts/struts-person.xml"></include>
 	<include file="struts/struts-department.xml"></include>
+	<include file="struts/struts-user.xml"></include>
 </struts>

@@ -17,13 +17,12 @@
 			<value>classpath:hibernate/hibernate.cfg.xml</value>
 		</property>
 	</bean>
-	
 	<context:component-scan base-package="com.itheima09.oa"></context:component-scan>
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-	<property name="sessionFactory">
+		<property name="sessionFactory">
 			<ref bean="sessionFactory"/>
 		</property>
-		</bean>
+	</bean>
 	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory"/>
