@@ -47,13 +47,13 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	@Override
 	public void deleteEntry(Serializable id) {
 		// TODO Auto-generated method stub
-		
+		T t = (T) this.hibernateTemplate.get(this.entityClass,id);
+		this.hibernateTemplate.delete(t);
 	}
 
 	@Override
 	public void updateEntry(T t) {
-		// TODO Auto-generated method stub
-		
+		this.hibernateTemplate.update(t);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 	@Override
 	public T getEntryById(Serializable id) {
 		// TODO Auto-generated method stub
-		return null;
+		return (T)this.hibernateTemplate.get(this.entityClass,id);
 	}
 
 	@Override

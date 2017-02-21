@@ -53,5 +53,8 @@
 		加载映射文件
 	-->
 	<mapping resource="com/itheima09/oa/domain/Person.hbm.xml" />
+	<mapping resource="com/itheima09/oa/domain/Department.hbm.xml" />
+	<mapping resource="com/itheima09/oa/domain/Role.hbm.xml" />
+	<mapping resource="com/itheima09/oa/domain/User.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

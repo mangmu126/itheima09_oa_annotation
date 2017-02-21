@@ -16,12 +16,7 @@ public class PersonAction extends BaseAction<Person>{
 
 	@Resource(name="personService")
 	private PersonService personService;
-	
-	@Override
-	public BaseService<Person> getBaseService() {
-		// TODO Auto-generated method stub
-		return this.personService;
-	}
+
 	
 
 

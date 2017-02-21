@@ -20,6 +20,6 @@ public class PersonTest extends SpringUtils{
 	public void testPersionAction()
 	{
 		PersonAction personAction = (PersonAction)context.getBean("personAction");
-		personAction.showDate();
+//		personAction.showDate();
 	}
 }
